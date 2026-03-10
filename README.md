@@ -33,12 +33,13 @@ Principais fluxos testados
 Pontos mais críticos que identifiquei
 
 - **Nenhum campo é obrigatório** — você consegue criar um curso completamente em branco
-- **Campos de texto livre não têm limite de caracteres**, o que causa quebra de layout na lista
+- **Campos de texto livre não têm limite de caracteres**, o que causa uma severa quebra de layout na lista
 - **O card do curso não é clicável** — não dá pra acessar os detalhes
 - **Não tem edição** (funcionalidade esperada)
 - **Exclusão não funciona de verdade** — aparece um pop-up falando que foi excluído, mas o curso continua lá
 - **Datas inválidas são aceitas** (ano 1, ano 275760, término antes do início)
 - **Campo de vagas aceita valor negativo**
+
 
 ---
 
@@ -46,27 +47,7 @@ Casos de teste
 
 Os casos de teste completos, com passos, resultados e evidências, estão na planilha abaixo:
 
-[Planilha de Casos de Teste]((https://docs.google.com/spreadsheets/d/17PAGct91xAuVrecO4Xx6F3tMr_O9gAwoCh2v7j1Q7kk/edit?usp=sharing))
-
----
-
-Exemplos de casos em Gherkin
-
-Cenário: Cadastrar curso com data de término anterior à data de início
-  Dado que estou na página de cadastro de cursos
-  Quando informo uma data de início válida
-  E informo uma data de término que é anterior à data de início
-  E clico em "Cadastrar Curso"
-  Então o sistema deve exibir uma mensagem de erro
-  E não deve permitir o cadastro
-
-Cenário: Tentar acessar detalhes de um curso recém-criado
-  Dado que um curso foi cadastrado com sucesso
-  E estou na página de listagem de cursos
-  Quando passo o mouse sobre o card do curso
-  E clico no card
-  Então o cursor muda para o ícone de proibido (🚫)
-  E o card não responde ao clique
+[Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/17PAGct91xAuVrecO4Xx6F3tMr_O9gAwoCh2v7j1Q7kk/edit?usp=sharing)
 
 ---
 
